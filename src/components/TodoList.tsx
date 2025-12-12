@@ -13,7 +13,11 @@ export function TodoList({ todoList, setTodoList }: Props) {
       )
     );
   };
-
+  const handleEdit = (id: string, editText: string) => {
+    setTodoList((prev) =>
+      prev.map((todo) => (todo.id === id ? { ...todo, text: editText } : todo))
+    );
+  };
   const handleDelete = (id: string) => {
     setTodoList((prev) => prev.filter((item) => item.id !== id));
   };
@@ -24,6 +28,7 @@ export function TodoList({ todoList, setTodoList }: Props) {
         <TodoItem
           item={item}
           key={item.id}
+          onEdit={handleEdit}
           handleToggle={handleToggle}
           onDelete={handleDelete}
         ></TodoItem> //

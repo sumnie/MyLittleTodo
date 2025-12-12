@@ -22,14 +22,14 @@ export function TodoInput({ onAdd }: Props) {
     >
       <input
         type="text"
-        className="w-full border-b-2 p-3 outline-none focus:border-indigo-500"
+        className="w-full border-b-2 p-3 outline-none"
         value={todoItem}
         id="writeTodo"
         onChange={(e) => setTodoItem(e.target.value)}
       ></input>
 
       <Button
-        className="tracking-wider"
+        className="tracking-wider border-2 dark:border-white rounded-full"
         type="submit"
         disabled={todoItem === ''}
       >

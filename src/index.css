@@ -11,7 +11,14 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--color-background);
-
+}
+/* 모바일 브라우저 기본 버튼 UI 제거 */
+button,
+input[type='button'],
+input[type='submit'],
+input[type='reset'] {
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .dark{
@@ -43,11 +50,7 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
-
-button:hover {
-  border-color: #646cff;
-}
-
+/* 
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -59,4 +62,4 @@ button:hover {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
