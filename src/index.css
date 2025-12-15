@@ -1,10 +1,12 @@
+@config "../tailwind.config.js";
 @import "tailwindcss";
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   --color-background:#ffffff;
-  color-scheme: light dark;
+  /* color-scheme: light dark; */
   color: #213547;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -50,16 +52,3 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
-/* 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */

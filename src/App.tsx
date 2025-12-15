@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Footer } from './components/Footer.tsx';
-import { HeroSection } from './components/HeroSection.tsx';
+import { HeroSection } from './components/hero/HeroSection.tsx';
 import { TodoInput } from './components/TodoInput.tsx';
 import { TodoList } from './components/TodoList.tsx';
 import type { Todo } from './types/todo';

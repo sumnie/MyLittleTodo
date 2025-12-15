@@ -18,11 +18,12 @@ export function TodoInput({ onAdd }: Props) {
         onAdd(todoItem);
         setTodoItem('');
       }}
-      className="flex gap-4"
+      className="flex gap-2"
     >
       <input
         type="text"
-        className="w-full border-2 rounded-full p-3 px-4 outline-none"
+        autoComplete="off"
+        className="w-full border-2 border-gray-300 rounded-full p-3 px-4 outline-none"
         value={todoItem}
         id="writeTodo"
         onChange={(e) => setTodoItem(e.target.value)}
