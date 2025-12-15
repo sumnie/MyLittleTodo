@@ -22,17 +22,23 @@ export function TodoList({ todoList, setTodoList }: Props) {
     setTodoList((prev) => prev.filter((item) => item.id !== id));
   };
   return (
-    <div className="md:py-6 py-4">
+    <div className="md:py-6 py-4 flex-1">
       {/* // map 쓸 때 key 필수 (안 넣으면 리렌더링시 비효율 -> key 없으면 Virtual Dom이 찾기 때문에 비효율) */}
-      {todoList.map((item) => (
-        <TodoItem
-          item={item}
-          key={item.id}
-          onEdit={handleEdit}
-          handleToggle={handleToggle}
-          onDelete={handleDelete}
-        ></TodoItem> //
-      ))}
+      {todoList.length == 0 ? (
+        <p className="py-5 text-xl text-gray-400 text-center">
+          할 일을 추가해보세요!
+        </p>
+      ) : (
+        todoList.map((item) => (
+          <TodoItem
+            item={item}
+            key={item.id}
+            onEdit={handleEdit}
+            handleToggle={handleToggle}
+            onDelete={handleDelete}
+          ></TodoItem> //
+        ))
+      )}
     </div>
   );
 }

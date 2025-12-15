@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Footer } from './components/Footer.tsx';
 import { HeroSection } from './components/HeroSection.tsx';
 import { TodoInput } from './components/TodoInput.tsx';
 import { TodoList } from './components/TodoList.tsx';
@@ -32,6 +33,7 @@ function App() {
 
       {/* 목록 (완료 체크박스 + 목록에서 삭제하기) */}
       <TodoList todoList={todoList} setTodoList={setTodoList} />
+      <Footer></Footer>
     </div>
   );
 }

@@ -20,7 +20,7 @@ export function HeroSection() {
   return (
     <div>
       <Theme></Theme>
-      <p className="text-center mb-5 text-4xl md:text-[3em]">{time}</p>
+      <p className="text-center mb-9 text-4xl md:text-[3em]">{time}</p>
     </div>
   );
 }
