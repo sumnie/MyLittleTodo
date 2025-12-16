@@ -96,7 +96,7 @@ export function TodoItem({
         <div>
           {isEditing ? (
             <Button
-              className="w-[35px] h-[35px] rounded-full"
+              className="w-[35px] h-[35px] rounded-full flex items-center !px-0 justify-center"
               onClick={() => {
                 if (editText.trim()) {
                   onEdit(item.id, editText);
@@ -108,7 +108,7 @@ export function TodoItem({
             </Button>
           ) : (
             <Button
-              className="w-[35px] h-[35px] rounded-full"
+              className="w-[35px] h-[35px] rounded-full flex items-center !px-0 justify-center"
               onClick={() => {
                 setEditText(item.text); // 기존 텍스트로 초기화
                 setIsEditing(true);
@@ -119,7 +119,7 @@ export function TodoItem({
           )}
           <Button
             variant="danger"
-            className="ml-2 w-[35px] h-[35px] rounded-full"
+            className="ml-2 w-[35px] h-[35px] rounded-full flex items-center !px-0 justify-center"
             onClick={() => onDelete(item.id)}
           >
             <Minus size="15" strokeWidth={4}></Minus>

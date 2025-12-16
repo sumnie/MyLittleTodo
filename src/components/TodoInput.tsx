@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Button } from '../components/ui/Button';
 
 type Props = {
@@ -10,6 +10,7 @@ type Props = {
 
 export function TodoInput({ onAdd }: Props) {
   const [todoItem, setTodoItem] = useState('');
+  const inputRef = useRef<HTMLInputElement>(null);
   return (
     <form
       onSubmit={(e) => {
@@ -17,20 +18,22 @@ export function TodoInput({ onAdd }: Props) {
         if (!todoItem.trim()) return;
         onAdd(todoItem);
         setTodoItem('');
+        inputRef.current?.focus();
       }}
       className="flex gap-2"
     >
       <input
         type="text"
         autoComplete="off"
-        className="w-full border-2 border-gray-300 rounded-full p-3 px-4 outline-none"
+        ref={inputRef}
+        className="w-full border-2 border-gray-300 rounded-xl p-2 md:p-3 px-4 outline-none"
         value={todoItem}
         id="writeTodo"
         onChange={(e) => setTodoItem(e.target.value)}
       ></input>
 
       <Button
-        className="tracking-wider rounded-full"
+        className="rounded-xl disabled:cursor-auto disabled:opacity-50"
         type="submit"
         disabled={todoItem === ''}
       >

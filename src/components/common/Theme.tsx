@@ -5,7 +5,7 @@ export function Theme() {
   const { theme, toggleTheme } = useTheme();
   return (
     <button onClick={toggleTheme}>
-      {theme ? (
+      {theme === 'dark' ? (
         <Sun className="cursor-pointer"></Sun>
       ) : (
         <Moon className="cursor-pointer"></Moon>

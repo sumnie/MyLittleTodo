@@ -21,15 +21,22 @@ export function TodoList({ todoList, setTodoList }: Props) {
   const handleDelete = (id: string) => {
     setTodoList((prev) => prev.filter((item) => item.id !== id));
   };
+
+  // 정렬
+
+  const activeTodos = todoList.filter((todo) => !todo.status);
+  const completedTodos = todoList.filter((todo) => todo.status);
+
+  const visibleTodos = [...activeTodos, ...completedTodos];
   return (
-    <div className="md:py-6 py-4 flex-1">
+    <div className="h-0 flex-1 overflow-y-auto p-3">
       {/* // map 쓸 때 key 필수 (안 넣으면 리렌더링시 비효율 -> key 없으면 Virtual Dom이 찾기 때문에 비효율) */}
       {todoList.length == 0 ? (
         <p className="py-5 text-xl text-gray-400 text-center">
           할 일을 추가해보세요!
         </p>
       ) : (
-        todoList.map((item) => (
+        visibleTodos.map((item) => (
           <TodoItem
             item={item}
             key={item.id}

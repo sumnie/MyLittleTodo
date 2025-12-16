@@ -1,9 +1,16 @@
 @config "../tailwind.config.js";
 @import "tailwindcss";
+@font-face {
+  font-family: 'Pretendard';
+  src: url('/fonts/PretendardVariable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Pretendard', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
+  letter-spacing: 0.03em;
   font-weight: 400;
   --color-background:#ffffff;
   /* color-scheme: light dark; */
@@ -51,4 +58,10 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+@layer utilities {
+  .bg-app {
+    background-color: var(--color-background);
+  }
 }

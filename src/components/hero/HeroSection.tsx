@@ -57,7 +57,7 @@ export function HeroSection() {
         <p className="text-gray-500 dark:text-white">{date}</p>
         <Theme></Theme>
       </Header>
-      <p className="text-center mb-9 text-4xl md:text-[3em]">{time}</p>
+      <p className="text-center my-6 md:my-9 text-4xl md:text-[3em]">{time}</p>
     </div>
   );
 }

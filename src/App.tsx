@@ -16,20 +16,22 @@ function App() {
     localStorage.setItem('todoList', list);
   }, [todoList]);
   return (
-    <div className="h-screen flex flex-col w-full max-w-2xl mx-auto md:py-4 md:px-3 p-3">
-      <HeroSection></HeroSection>
-      <TodoInput
-        // todoItem={todoItem}
-        // setTodoItem={setTodoItem}
-        onAdd={(text) => {
-          const newItem: Todo = {
-            id: 'td' + Date.now(),
-            text,
-            status: false,
-          };
-          setTodoList((prev) => [newItem, ...prev]);
-        }}
-      />
+    <div className="min-h-dvh flex flex-col w-full max-w-2xl mx-auto md:px-3">
+      <div className="bg-app sticky top-0 z-10 p-3">
+        <HeroSection></HeroSection>
+        <TodoInput
+          // todoItem={todoItem}
+          // setTodoItem={setTodoItem}
+          onAdd={(text) => {
+            const newItem: Todo = {
+              id: 'td' + Date.now(),
+              text,
+              status: false,
+            };
+            setTodoList((prev) => [newItem, ...prev]);
+          }}
+        />
+      </div>
 
       {/* 목록 (완료 체크박스 + 목록에서 삭제하기) */}
       <TodoList todoList={todoList} setTodoList={setTodoList} />

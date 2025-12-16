@@ -8,7 +8,7 @@ export function Button({
   ...props
 }: ButtonProps) {
   const base =
-    'text-sm font-bold cursor-pointer inline-flex whitespace-nowrap shrink-0 items-center disabled:bg-gray-300 disabled:text-gray-600 p-3';
+    'text-sm font-bold cursor-pointer inline-flex whitespace-nowrap shrink-0 items-center disabled:bg-gray-300 disabled:text-gray-600 px-4';
   const variants = {
     primary: 'bg-indigo-500 text-white',
     success: 'bg-green-500 text-white',
