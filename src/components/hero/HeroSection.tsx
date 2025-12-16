@@ -5,10 +5,30 @@ export function HeroSection() {
   const [time, setTime] = useState(getTime());
   const [date, setDate] = useState(getDate());
   useEffect(() => {
-    const interval = setInterval(() => {
+    let interval: ReturnType<typeof setInterval> | null = null;
+
+    const now = new Date();
+    const nextMinute = new Date(
+      now.getFullYear(),
+      now.getMonth(),
+      now.getDate(),
+      now.getHours(),
+      now.getMinutes() + 1,
+      0,
+      0
+    );
+    const timeout = nextMinute.getTime() - now.getTime();
+    const timer = setTimeout(() => {
       setTime(getTime());
-    }, 60 * 1000);
-    return () => clearInterval(interval); // 컴포넌트 사라질때 쓰일 정리용 콜백으로 등록. effect가 바뀌거나 unmount될 때 실행됨
+      interval = setInterval(() => {
+        setTime(getTime());
+      }, 60 * 1000);
+    }, timeout);
+
+    return () => {
+      clearTimeout(timer);
+      if (interval) clearInterval(interval);
+    };
   }, []);
 
   useEffect(() => {
